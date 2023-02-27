@@ -1,5 +1,7 @@
 # docker-compose-opensearch-fluentd
 
+Put file to `log/nginx/access.log`
+
 ```
 docker compose up -d
 ```
