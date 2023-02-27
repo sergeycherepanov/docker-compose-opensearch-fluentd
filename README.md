@@ -2,7 +2,10 @@
 
 Put file to `log/nginx/access.log`
 
+
+
 ```
+cp fluentd.conf.dist fluentd.conf
 docker compose up -d
 ```
 
