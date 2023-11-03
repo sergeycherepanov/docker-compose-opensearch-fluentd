@@ -134,7 +134,7 @@ services:
       OPENSEARCH_HOSTS: '["http://opensearch-node1:9200","http://opensearch-node2:9200"]' # Define the OpenSearch nodes that OpenSearch Dashboards will query
       SERVER_BASEPATH: '/dashboards'
       SERVER_REWRITEBASEPATH: 'true'
-      DISABLE_SECURITY_PLUGIN: true
+      DISABLE_SECURITY_DASHBOARDS_PLUGIN: 'true'
     networks:
       - opensearch
     depends_on:
