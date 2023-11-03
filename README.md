@@ -6,9 +6,7 @@ Put a file to `log/nginx/access.log`
 
 ```
 cp fluentd.conf.dist fluentd.conf
-docker compose up -d
+TRAEFIK_BIND_ADDRESS=9200 docker compose up -d
 ```
 
-Open the http://localhost:5601/.   
-User: `admin`.   
-Password: `admin`.   
+Open the http://localhost:9200/dashboards/.   
