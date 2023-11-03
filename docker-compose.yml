@@ -131,8 +131,8 @@ services:
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:latest # Make sure the version of opensearch-dashboards matches the version of opensearch installed on other nodes
     environment:
-      OPENSEARCH_HOSTS: '["https://opensearch-node1:9200","https://opensearch-node2:9200"]' # Define the OpenSearch nodes that OpenSearch Dashboards will query
-      SERVER_BASEPATH: '/dashboard'
+      OPENSEARCH_HOSTS: '["http://opensearch-node1:9200","http://opensearch-node2:9200"]' # Define the OpenSearch nodes that OpenSearch Dashboards will query
+      SERVER_BASEPATH: '/dashboards'
       SERVER_REWRITEBASEPATH: 'true'
     networks:
       - opensearch
@@ -149,7 +149,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dashboards.entrypoints=default"
-      - "traefik.http.routers.dashboards.rule=PathPrefix(`/dashboards/`)"
+      - "traefik.http.routers.dashboards.rule=PathPrefix(`/dashboards`)"
       - "traefik.http.services.dashboards.loadbalancer.server.port=5601"
 
 volumes:
